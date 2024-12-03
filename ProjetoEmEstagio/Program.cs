@@ -14,7 +14,7 @@ void CriacaoMatriz(string variavel)
         }
     }
 }
-
+int pontos = 0;
 CriacaoMatriz("O");
 ValorDiferente(jogo);
 ExibirJogo(jogo);
@@ -22,15 +22,20 @@ ExibirJogo(jogo);
 int linha;
 int coluna;
 
+Console.WriteLine("[Insira a linha e a coluna separados por ',']");
+Console.Write("Seu palpite: ");
 string[] palpite = Console.ReadLine().Split(",");
-int linhaPalpite = int.Parse(palpite[0]);
-int colunaPalpite = int.Parse(palpite[1]);
+int linhaPalpite = int.Parse(palpite[0])-1;
+int colunaPalpite = int.Parse(palpite[1])-1;
 
 if (linhaPalpite == linha && colunaPalpite == coluna)
 {
     Console.WriteLine("Certou!");
+    Pontuacao(pontos);
 }
-else { Falha("Errou"); }
+else { Falha("> Jogo Encerrado <");
+    Perdeu(pontos);
+}
 
 string[,] ValorDiferente(string[,] jogo)
 {
@@ -38,7 +43,7 @@ string[,] ValorDiferente(string[,] jogo)
     linha = rnd.Next(10);
     coluna = rnd.Next(24);
     jogo[linha, coluna] = "0";
-    Console.WriteLine(linha + " " + coluna);
+    Console.WriteLine(linha + 1 + " " + (coluna+1));
     return jogo;
 }
 
@@ -60,3 +65,53 @@ static void Falha(string txt)
     Console.WriteLine(txt);
     Console.ResetColor();
 }
+
+void Pontuacao(int pontos)
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    for (int i = 0; i < 10; i++)
+    {
+        Thread.Sleep(250);
+        pontos ++;
+        Console.Clear();
+        Console.WriteLine("==============");
+        Console.WriteLine(" PONTUAÇÃO: " + pontos);
+        Console.WriteLine("==============");
+
+    }
+    Console.ResetColor ();
+};
+
+void Perdeu(int pontos)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    if (pontos > 10)
+    {
+        for (int i = 0; pontos > 10; i += 10)
+        {
+            Thread.Sleep(250);
+            pontos-=10;
+            Console.Clear();
+            Console.WriteLine("==============");
+            Console.WriteLine(" PONTUAÇÃO: " + pontos);
+            Console.WriteLine("==============");
+        }
+    }
+    Thread.Sleep(1500);
+    Console.Clear ();
+    Console.WriteLine("==============");
+    Console.WriteLine(" PONTUAÇÃO: " + pontos);
+    Console.WriteLine("==============");
+    for (int i = 0; pontos > 0; i++)
+    {
+        Thread.Sleep(250);
+        pontos--;
+        Console.Clear();
+        Console.WriteLine("==============");
+        Console.WriteLine(" PONTUAÇÃO: " + pontos);
+        Console.WriteLine("==============");
+
+    }
+    Console.ResetColor();
+}
+
