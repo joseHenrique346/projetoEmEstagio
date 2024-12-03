@@ -1,18 +1,6 @@
 ﻿string[,] jogo;
 jogo = new string[11, 24];
 
-
-
-void CriacaoMatriz(string variavel)
-{
-    for (int i = 0; i < 11; i++)
-    {
-        for (int j = 0; j < 11; j++)
-        {
-            jogo[i, j] = variavel;
-        }
-    }
-}
 int pontos = 0;
 CriacaoMatriz("O");
 ValorDiferente(jogo);
@@ -36,13 +24,26 @@ else { Falha("> Jogo Encerrado <");
     Perdeu(pontos);
 }
 
+
+void CriacaoMatriz(string variavel)
+{
+    for (int i = 0; i < 11; i++)
+    {
+        for (int j = 0; j < 11; j++)
+        {
+            jogo[i, j] = variavel;
+        }
+    }
+}
+
+
 string[,] ValorDiferente(string[,] jogo)
 {
     Random rnd = new Random();
     linha = rnd.Next(10);
     coluna = rnd.Next(10);
     jogo[linha, coluna] = "0";
-    Console.WriteLine((linha +1 ) + " " + (coluna + 1));
+    //Console.WriteLine((linha +1 ) + " " + (coluna + 1));
     return jogo;
 }
 
