@@ -1,7 +1,6 @@
-﻿Vermei("Menino Fatal");
-CriacaoMatriz("O");
+﻿CriacaoMatriz("O");
 
-static void Vermei(string txt)
+static void Falha(string txt)
 {
     Console.ForegroundColor = ConsoleColor.DarkRed;
     Console.WriteLine(txt);
