@@ -1,15 +1,15 @@
-﻿CriacaoMatriz("O");
+﻿//static void Falha(string txt)
+//{
+//    Console.ForegroundColor = ConsoleColor.DarkRed;
+//    Console.WriteLine(txt);
+//    Console.ResetColor();
+//}
 
-static void Falha(string txt)
-{
-    Console.ForegroundColor = ConsoleColor.DarkRed;
-    Console.WriteLine(txt);
-    Console.ResetColor();
-}
+string[,] jogo;
+jogo = new string[11, 24];
 
-static void CriacaoMatriz<T>(T variavel)
+void CriacaoMatriz(string variavel)
 {
-    T[,] jogo = new T[11, 24];
     for (int i = 0; i < 11; i++)
     {
         for (int j = 0; j < 24; j++)
@@ -18,6 +18,10 @@ static void CriacaoMatriz<T>(T variavel)
         }
     }
 }
+
+CriacaoMatriz("O");
+ValorDiferente(jogo);
+ExibirJogo(jogo);
 
 static string[,] ValorDiferente(string[,] jogo)
 {
