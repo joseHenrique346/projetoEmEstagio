@@ -21,7 +21,7 @@ ExibirJogo(jogo);
 int linha;
 int coluna;
 
-Console.WriteLine("[Insira a linha e a coluna separados por ',']");
+Console.WriteLine("\n[Insira a linha e a coluna separados por ',']");
 Console.Write("Seu palpite: ");
 string[] palpite = Console.ReadLine().Split(",");
 int linhaPalpite = int.Parse(palpite[0])-1;
