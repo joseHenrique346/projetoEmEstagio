@@ -1,12 +1,9 @@
-﻿//static void Falha(string txt)
-//{
-//    Console.ForegroundColor = ConsoleColor.DarkRed;
-//    Console.WriteLine(txt);
-//    Console.ResetColor();
-//}
+﻿using System.Xml;
 
 string[,] jogo;
 jogo = new string[11, 24];
+
+
 
 void CriacaoMatriz(string variavel)
 {
@@ -23,12 +20,26 @@ CriacaoMatriz("O");
 ValorDiferente(jogo);
 ExibirJogo(jogo);
 
-static string[,] ValorDiferente(string[,] jogo)
+int linha;
+int coluna;
+
+string[] palpite = Console.ReadLine().Split(",");
+int linhaPalpite = int.Parse(palpite[0]);
+int colunaPalpite = int.Parse(palpite[1]);
+
+if (linhaPalpite == linha && colunaPalpite == coluna)
+{
+    Console.WriteLine("Certou!");
+}
+else { Falha("Errou"); }
+
+string[,] ValorDiferente(string[,] jogo)
 {
     Random rnd = new Random();
-    int linha = rnd.Next(10);
-    int coluna = rnd.Next(24);
+    linha = rnd.Next(10);
+    coluna = rnd.Next(24);
     jogo[linha, coluna] = "0";
+    Console.WriteLine(linha + " " + coluna);
     return jogo;
 }
 
@@ -42,4 +53,11 @@ static void ExibirJogo(string[,] jogo)
         }
         Console.WriteLine();
     }
+}
+
+static void Falha(string txt)
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.WriteLine(txt);
+    Console.ResetColor();
 }
