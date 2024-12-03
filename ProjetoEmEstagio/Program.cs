@@ -1,5 +1,4 @@
-﻿using System.Xml;
-
+﻿
 string[,] jogo;
 jogo = new string[11, 24];
 
