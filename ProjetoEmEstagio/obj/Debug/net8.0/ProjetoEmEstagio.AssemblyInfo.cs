@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoEmEstagio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1125266a93687fd04fd7391e5c55bf2ebe645766")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a8dbaf8d80c300955737719f2a81105aa036304")]
+>>>>>>> Pontuacao
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoEmEstagio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoEmEstagio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
